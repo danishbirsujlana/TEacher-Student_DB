@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
 const LoginPage = () => {
+    const [logged, setLogged] = useState(true);
     const navigate = useNavigate();
 
     const [userdetails, setUserdetails] = useState({
@@ -35,6 +36,12 @@ const LoginPage = () => {
             }
         })
     }
+
+    const handleCheck = () => {
+        setLogged(!logged);
+        window.localStorage.setItem("isLogged", logged);
+    }
+
   return (
     <section className="bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 h-screen">
@@ -57,7 +64,7 @@ const LoginPage = () => {
                         </div>
                         <div className="flex items-start">
                             <div className="flex items-center h-5">
-                                <input id="terms" type="checkbox" className="mr-2 w-4 h-4 border rounded focus:ring-3 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800" required />
+                                <input id="terms" onClick={handleCheck} type="checkbox" className="mr-2 w-4 h-4 border rounded focus:ring-3 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800" required />
                             </div>
                             <div classNameName="ml-3 text-sm">
                                 <label for="terms" className="font-light text-gray-300">Remember me</label>

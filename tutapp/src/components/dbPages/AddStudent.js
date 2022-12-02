@@ -33,7 +33,7 @@ const AddStudent = () => {
     <section className="bg-gray-900">
         <div className="px-6 mx-auto h-screen pt-6">
             <nav className='flex justify-between'>
-                <a href='/' className='text-xl font-bold md:text-2xl text-white border-2 p-2 rounded'>Logo</a>
+                <a href='/' onClick={() => {window.localStorage.removeItem("isLogged")}} className='text-xl font-bold md:text-2xl text-white border-2 p-2 rounded'>Logo</a>
                 <a href='/login' className=' text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-md py-3 px-6 text-center'>Logout</a>
             </nav>
             <div className="flex flex-col items-center justify-center mx-auto pt-6">

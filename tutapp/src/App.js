@@ -12,11 +12,12 @@ import EditTeacher from './components/dbPages/EditTeacher';
 import Front from './components/Front'
 
 const App = () => {
+  const loggedfn = window.localStorage.getItem("isLogged");
   return (
     <div>
       <Router>
         <Routes>
-          <Route path='/' element={<Front/>} />
+          <Route path='/' element={loggedfn ? <Home/> : <Front/>} />
           <Route path='/home' element={<Home/>} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/register' element={<SignUpPage/>} />

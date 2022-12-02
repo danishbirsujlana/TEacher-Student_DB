@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
-const mongoURL = 'mongodb+srv://danishbirsingh:Rocky221072@cluster0.vcb01j7.mongodb.net/?retryWrites=true&w=majority'
+const mongoURL = 'mongodb://danishbirsingh:Rocky221072@ac-zbcnk5a-shard-00-00.vcb01j7.mongodb.net:27017,ac-zbcnk5a-shard-00-01.vcb01j7.mongodb.net:27017,ac-zbcnk5a-shard-00-02.vcb01j7.mongodb.net:27017/?ssl=true&replicaSet=atlas-12e1tf-shard-0&authSource=admin&retryWrites=true&w=majority'
 
 mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
